@@ -135,6 +135,5 @@ span {
 
 .price {
   font-size: 10px;
-  color: #000000;
 }
 </style>
