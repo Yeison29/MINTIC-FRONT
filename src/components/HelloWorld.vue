@@ -1,62 +1,86 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa" target="_blank" rel="noopener">pwa</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript" target="_blank" rel="noopener">typescript</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+  <v-app-bar :elevation="3" scroll-behavior="hide">
+    <template v-slot:prepend>
+      <v-img width="50" :src="LogoUrl" />
+    </template>
+
+    <h1>YourCam</h1>
+
+    <template v-slot:append>
+      <v-btn icon="mdi-heart"></v-btn>
+
+      <v-btn icon="mdi-magnify"></v-btn>
+
+      <v-btn icon="mdi-dots-vertical"></v-btn>
+    </template>
+  </v-app-bar>
+
+  <v-carousel show-arrows="hover" continuous cycle>
+    <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src" cover>
+      <v-sheet height="100%" color="#00000059">
+        <div
+          class="d-flex fill-height justify-center align-end pb-15"
+        >
+          <div class="container-slider">
+            {{ item.description }}
+          </div>
+        </div>
+      </v-sheet>
+    </v-carousel-item>
+  </v-carousel>
+
+  <bot />
+  <services />
+  <testimons />
+  <footer-componet />
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { ref } from "vue";
+import Services from "@/components/Services.vue";
+import Testimons from "@/components/Testimons.vue";
+import FooterComponet from "@/components/FooterComponet.vue";
+import Bot from "@/components/Bot.vue";
 
-export default defineComponent({
-  name: 'HelloWorld',
-  props: {
-    msg: String,
+const LogoUrl = new URL("@/assets/logo.png", import.meta.url).href;
+
+const items = [
+  {
+    src: "https://8779058.fs1.hubspotusercontent-na1.net/hubfs/8779058/curso-videovigilancia-900x600.jpg",
+    description:
+      "Seguridad al alcance de tu mano. Protege tu hogar y negocio con cámaras de última tecnología.",
   },
-});
+  {
+    src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
+    description:
+      "Vigilancia 24/7. Control total desde tu móvil, donde sea que estés.",
+  },
+  {
+    src: "https://3b58f76fe1.cbaul-cdnwnd.com/1bfd568846b1da8704c5f9bb7f40c7eb/200000503-efc84efc86/camaras-de-seguridad-001_1.jpg?ph=3b58f76fe1",
+    description:
+      "La tranquilidad no tiene precio. Invierte en seguridad confiable hoy mismo.",
+  },
+  {
+    src: "https://camarasdeseguridadchile.com/wp-content/uploads/2024/06/camaras-de-seguridad.jpg",
+    description:
+      "Con nuestras cámaras, cada rincón está protegido. ¡No más preocupaciones!",
+  },
+];
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+<style scoped>
+.h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.container-slider {
+  border-radius: 20px;
+  background-color: transparent;
+  width: 500px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
