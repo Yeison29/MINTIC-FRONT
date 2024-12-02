@@ -48,7 +48,7 @@ const items = [
     title: "Mantenimiento y soporte",
     src: "https://img.freepik.com/fotos-premium/tecnico-caucasico-asegurando-seguridad-camaras-cctv-mantenimiento-preventivo-diligente-profesional_983420-231359.jpg",
     description:
-      "Ofrecemos almacenamiento en la nube para acceder a las grabaciones de tus cámaras en cualquier momento, sin preocuparte por espacio.",
+      "Ofrecemos mantenimiento y soporte técnico para sistemas de cámaras de seguridad, asegurando su funcionamiento óptimo mediante revisiones, reparaciones y asistencia rápida.",
   },
   {
     title: "Integración con alarmas",
