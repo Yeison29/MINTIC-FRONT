@@ -25,7 +25,7 @@
   >
     <swiper-slide v-for="(product, i) in products" :key="i">
       <div class="container-product">
-        <span>${{ product.price }} COP</span>
+        <span class="price">${{ product.price }} COP</span>
         <div>
           <p>{{ product.title }}</p>
         </div>
@@ -131,5 +131,10 @@ span {
   background: linear-gradient(to bottom, transparent 0%, #000000 100%);
   bottom: 0;
   padding: 1rem;
+}
+
+.price {
+  font-size: 10px;
+  color: #000000;
 }
 </style>
