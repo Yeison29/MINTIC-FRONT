@@ -1,26 +1,8 @@
 <template>
-  <v-app-bar :elevation="3" scroll-behavior="hide">
-    <template v-slot:prepend>
-      <v-img width="50" :src="LogoUrl" />
-    </template>
-
-    <h1>YourCam</h1>
-
-    <template v-slot:append>
-      <v-btn icon="mdi-heart"></v-btn>
-
-      <v-btn icon="mdi-magnify"></v-btn>
-
-      <v-btn icon="mdi-dots-vertical"></v-btn>
-    </template>
-  </v-app-bar>
-
   <v-carousel show-arrows="hover" continuous cycle>
     <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src" cover>
       <v-sheet height="100%" color="#00000059">
-        <div
-          class="d-flex fill-height justify-center align-end pb-15"
-        >
+        <div class="d-flex fill-height justify-center align-end pb-15">
           <div class="container-slider">
             {{ item.description }}
           </div>
@@ -28,22 +10,9 @@
       </v-sheet>
     </v-carousel-item>
   </v-carousel>
-
-  <bot />
-  <services />
-  <testimons />
-  <footer-componet />
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import Services from "@/components/Services.vue";
-import Testimons from "@/components/Testimons.vue";
-import FooterComponet from "@/components/FooterComponet.vue";
-import Bot from "@/components/Bot.vue";
-
-const LogoUrl = new URL("@/assets/logo.png", import.meta.url).href;
-
 const items = [
   {
     src: "https://8779058.fs1.hubspotusercontent-na1.net/hubfs/8779058/curso-videovigilancia-900x600.jpg",
@@ -69,10 +38,6 @@ const items = [
 </script>
 
 <style scoped>
-.h1 {
-  font-family: Georgia, "Times New Roman", Times, serif;
-}
-
 .container-slider {
   border-radius: 20px;
   background-color: transparent;
@@ -82,5 +47,4 @@ const items = [
   -webkit-backdrop-filter: blur(10px);
   color: white;
 }
-
 </style>

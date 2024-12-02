@@ -1,7 +1,13 @@
 <template>
-  <hello-world />
+  <carrosuel />
+  <services />
+  <carrosuel-product />
+  <testimons />
 </template>
 
 <script setup lang="ts">
-import HelloWorld from "@/components/HelloWorld.vue"
+import Carrosuel from "@/components/home/Carrosuel.vue";
+import Services from "@/components/home/Services.vue";
+import Testimons from "@/components/home/Testimons.vue";
+import CarrosuelProduct from "@/components/home/CarrosuelProduct.vue";
 </script>
