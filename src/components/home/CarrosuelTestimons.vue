@@ -13,7 +13,7 @@
         <v-sheet height="100%" tile>
           <div class="d-flex fill-height justify-center align-center">
             <v-card
-              class="mx-auto text-white"
+              class="mx-auto text-white d-flex flex-column"
               color="black"
               height="300"
               prepend-icon="mdi-twitter"
@@ -25,9 +25,9 @@
                 ></v-img>
               </template>
 
-              <v-card-text class="text-h5 py-2">
+              <div class="py-2 px-5 d-flex flex-column align-center">
                 "{{ slide.comentario }}"
-              </v-card-text>
+              </div>
 
               <v-card-actions>
                 <v-list-item class="w-100">
