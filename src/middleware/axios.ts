@@ -2,7 +2,7 @@ import axios from "axios";
 
 const instance = axios.create({
   baseURL: "https://geminiapi-8aai.onrender.com/", // Cambia esto por la URL base de tu API
-  timeout: 10000, // Tiempo de espera para la solicitud
+  timeout: 100000, // Tiempo de espera para la solicitud
   headers: {
     "Content-Type": "application/json",
   },
